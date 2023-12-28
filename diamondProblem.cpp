@@ -48,7 +48,7 @@ int main()
 
   //d.B::A::a = 8; // this is valid only with virtual inheritance, otherwise gives an 'A' is an ambiguous base of 'D' error because there are two instances of A in D. This type of calling does not solve the problem
 
-  // the way to acces B::A and C::A data is through pointers copies of A inside D
+  // the way to acces B::A and C::A data is through pointers to the two copies of A inside D by casting to a B* and C* respectively to solve the ambiguity
   B* d_as_b = (B*)(&d);
   d_as_b->a = 8;
   d_as_b->printInt();
